@@ -1,0 +1,102 @@
+@import "normalize.css";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+body{
+	font-family: 'Noto Serif', serif;
+}
+.wrapper{
+	min-height: 100vh;
+	display: grid;
+	grid-template: minmax(45px, auto) 1fr minmax(421px, auto) / 1fr;
+	grid-template-areas:
+				"header"
+				"main"
+				"footer";
+		
+		.header {
+			grid-area: header;
+			display: grid;
+			padding: 39px 0 36px 0;
+			grid-template: 1fr / minmax(120px, auto) minmax(45px, auto) 1fr minmax(433px, auto) 1fr minmax(186px, auto) minmax(120px, auto);
+
+			.header__logo{
+				width: 174px;
+				height: 45px;
+				grid-column: 2 / 3;
+			}
+			.header__menu{
+				display: grid;
+				grid-auto-flow: column;
+				grid-column: 4 / 5;
+			}
+			.header__list {
+				display: grid;
+				grid-auto-flow: column;
+				// justify-items: center;
+				list-style-type: none;
+				align-items: center;
+			}
+			.header__info{
+				align-items: center;
+				justify-items: center;
+				grid-auto-flow: column;
+				display: grid;
+				grid-column: 6 / 7;
+				.header__profile{
+					text-decoration: none;
+					background: url('/img/svg/user.svg') no-repeat left;
+					padding-left: 28px;
+					line-height: 25px;
+				}
+				.header__search img{
+					max-width: 20px;
+				}
+			}
+			.header__link {
+				text-decoration: none;
+			}
+		}
+		.main{
+			grid-area: main;
+			display: grid;
+			grid-template: 1fr / minmax(120px, auto) minmax(45px, auto) 1fr minmax(433px, auto) 1fr minmax(186px, auto) minmax(120px, auto);
+
+			.content{
+				display: grid;
+				grid-column: 2 / 7;
+			}
+			.content__banner img{
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+			.content__steps{
+				margin-top: 9.38vw;
+				display: grid;
+				justify-content: center;
+				grid-template: 16.93vw/ repeat(4, minmax(auto, 16.93vw));
+				grid-gap: 30px;
+				.steps__item{
+					background-color: #F8F8F8;
+					text-align: center;
+					padding: 3.13vw 2.08vw;
+
+					img{
+						width: 5.21vw
+					}
+				}
+				.steps__title{
+					margin-top: 5%;
+					margin-bottom: 9%;
+					font-weight: bold;
+					font-size: 1.25vw;
+					line-height: 33px;
+				}
+			}
+			
+		}
+		.footer{
+			grid-area: footer;
+			background-color:rgb(56, 23, 116);
+		}
+
+}
